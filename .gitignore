@@ -1,1 +1,3 @@
 node_modules/
+recv/*
+!recv/.gitkeep
