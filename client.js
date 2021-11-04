@@ -16,6 +16,10 @@ const connectAndSend = (file) => {
   conn.setEncoding('utf8'); // interpret data as text
   
   conn.on('data', (data) => {
+    if(data === "No such file or directory.") {
+      console.log(data);
+      process.exit();
+    }
     fs.writeFile(PATH, data, err => {
       if (err) {
         console.error(err)
